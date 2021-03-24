@@ -5,47 +5,119 @@ Created by: Callan Murphy
 Date: March 2021
 */
 
-// let x = ['10:00','11:00','12:00','1:00','2:00'];
-// let y = [339.54, 342.33, 356.93, 324.21,298.25];
+// Global statsLabels array
+const statsLabels = ["Open", "Close"];
+// TODO - TODO - other statistics not yet working
+// const statsLabels = ["High", "Low", "Average", "Open", "Close"];
 
-// let data = [
-//     { x: x[0], y: y[0]},
-//     { x: x[1], y: y[1]},
-//     { x: x[2], y: y[2]},
-//     { x: x[3], y: y[3]},
-//     { x: x[4], y: y[4]}
-// ]
-
+// Stock constructor
 class Stock {
     constructor(ticker, data){
         this.ticker = ticker;
         this.data = data;
+        this.stats = [];
+    }
+
+    makeChart(){
+        // display a chart for the stock data
+        displayChart(this);
+    }
+
+    makeStats(){
+        // create and display stats for the stock data
+        createStats(this);
+
+        displayStats(this);
     }
 }
 
-function newChart(stock) {
-    var i, j;
+
+
+/*---------------------------------------------------------*/
+/*** Non-DOM functions ***/
+/*---------------------------------------------------------*/
+function createStats(stock) {
+    var i;
+    var data = stock.data;
+    var stats = stock.stats;
+    stats[0] = data[0].y;
+    stats[1] = data[data.length - 1].y;
+
+    // TODO - other statistics not yet working
+    // stats[0] = max(data);
+    // stats[1] = min(data);
+
+    // var sum = 0;
+    // for (i = 0; i < data.length; i++){
+    //     sum += data[i];
+    // }
+    // stats[2] = sum / data.length;
+    // stats[3] = data[0];
+    // stats[4] = data[-1];
+    // stock.stats = stats;
+}
+
+
+
+/*---------------------------------------------------------*/
+/*** DOM functions ***/
+/*---------------------------------------------------------*/
+function displayChart(stock) {
+    var i;
 	var table = document.createElement('table');
-	// stock.className = "chart";
+	table.className = 'chart';
     let row = table.insertRow();
     let cell = row.insertCell();
-    let item = document.createTextNode('Time')
-    let cell2 = row.insertCell();
-    let item2 = document.createTextNode('Price ($)')
+    cell.className = 'chart-header-td';
+    cell.colSpan = "2";
+    let item = document.createTextNode(stock.ticker)
     cell.appendChild(item);
-    cell2.appendChild(item2);
-	for (i = 0; i < stock.data.length; i++){
+	
+    for (i = 0; i < stock.data.length; i++){
         let row = table.insertRow();
-        // for (j = 0; j < 2; j++){
-            let cell = row.insertCell();
-            let item = document.createTextNode(data[i].x)
-            let cell2 = row.insertCell();
-            let item2 = document.createTextNode(data[i].y)
-            cell.appendChild(item);
-            cell2.appendChild(item2);
-        // }
+        row.className = 'chart-td';
+        
+        let cell = row.insertCell();
+        cell.className = 'chart-td';
+        let item = document.createTextNode(data[i].x)
+        let cell2 = row.insertCell();
+        cell2.className = 'chart-td';
+        let item2 = document.createTextNode("$" + data[i].y)
+        cell.appendChild(item);
+        cell2.appendChild(item2);
     }
 	 
-	document.getElementById("data").appendChild(table);
+	document.getElementById(stock.ticker + "-chart").appendChild(table);
+
+}
+
+function displayStats(stock) {
+    var i;
+	var table = document.createElement('table');
+
+    // TODO - determine heading and structure
+	// table.className = 'stats';
+    // let row = table.insertRow();
+    // let cell = row.insertCell();
+    // cell.className = 'chart-header-td';
+    // cell.colSpan = "2";
+    // let item = document.createTextNode(stock.ticker + " Statistics")
+    // cell.appendChild(item);
+	
+    for (i = 0; i < statsLabels.length; i++){
+        let row = table.insertRow();
+        row.className = 'stats-td';
+
+        let cell = row.insertCell();
+        cell.className = 'stats-td';
+        let item = document.createTextNode(statsLabels[i])
+        let cell2 = row.insertCell();
+        cell2.className = 'stats-td';
+        let item2 = document.createTextNode(stock.stats[i])
+        cell.appendChild(item);
+        cell2.appendChild(item2);
+    }
+	 
+	document.getElementById(stock.ticker + "-stats").appendChild(table);
 
 }
