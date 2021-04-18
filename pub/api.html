@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+ 	<meta charset="utf-8">
+    <title>Stocktopia</title>
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="stylesheet" type="text/css" href="styles/stocktopia.css">
+<!DOCTYPE html>
+
+ <body>
+	<div id="site-header">
+
+		<div id="header-title">
+		  <!-- <p><a class='link-text' href="home.html">Stocktopia.js</a></p> -->
+		  <a href="home.html"><img class="site-logo" src="img/stocktopia.svg"></img></a>
+		</div>
+	
+		<div id="nav-menu">
+		  <ul>
+			<li class="zoom">
+				<a href="">
+					<img class="zoom" src="img/download.svg"></img>
+				</a>
+			</li>
+            <li><a href="examples.html">Examples</a></li>
+            <div id='current-page'>
+                <li><a id="current-page" href="api.html">API</a></li>
+            </div>
+			<li><a href="home.html">Home</a></li>
+		  </ul>
+		</div>
+	
+    </div>
+
+    <div>
+        <h1>Getting Started</h1>
+        <p>1. Click the download button in the top right corner of this webpage to get started!</p>
+        <p>2. Unzip the library package to obtain the stocktopia.js and stocktopia.css files</p>
+        <p>3. Add the two stocktopia files to your working directory</p>
+        <p>4. Connect pages to the library by adding the following lines in an HTML file:</p>
+        <p>&nbsp &nbsp &ltlink rel="stylesheet" type="text/css" href="path/to/stocktopia.css"&gt</p>
+        <p>&nbsp &nbsp &ltscript type="text/javascript" src="path/to/stocktopia.js"&gt&lt/script&gt</p>
+    </div>
+    <br>
+    <h1>API v1.0</h1>
+    <br>
+    <h2 class="object-title">Stock</h2>
+    <p>new Stock(ticker, exchange, info);</p>
+    <br>
+    <div>
+        <table class="api-table">
+            <tr>
+                <th>Property</th>
+                <th>Default</th> 
+                <th>Type</th>
+                <th id="api-table-description">Description</th>
+            </tr>
+            <tr>
+                <td>ticker</th>
+                <td>null</th> 
+                <td>String</th>
+                <td>Ticker name for the stock</th>
+            </tr>
+            <tr>
+                <td>exchange</th>
+                <td>null</th> 
+                <td>String</th>
+                <td>Exchange name for the stock</th>
+            </tr>
+            <tr>
+                <td>info</th>
+                <td>5 randomly assigned times/prices</th> 
+                <td>Dictionary</th>
+                <td>Dictionary of time-price pairs for a stock's daily data. Randomly generated if not provided</th>
+            </tr>
+            <tr>
+                <td>times</th>
+                <td>[]</th> 
+                <td>Array</th>
+                <td>List of one-day time data for the stock. Created by constructor from 'info'</th>
+            </tr>
+            <tr>
+                <td>prices</th>
+                <td>[]</th> 
+                <td>Array</th>
+                <td>List of one-day price data for the stock (same length as 'times'). Created by constructor from 'info'</th>
+            </tr>
+            <tr>
+                <td>stats</th>
+                <td>[filled by constructor]</th> 
+                <td>Array</th>
+                <td>5 length stats array in the order: Change ($), Change (%), Open, Close, Range</th>
+            </tr>
+        </table>
+    </div>
+
+    <br>
+    <h2 class="method-title">Stock.table(id, colour, data)</h2>
+    <p>Displays a stock table at HTML DOM id</p>
+    <br>
+    <div>
+        <table class="api-table">
+            <tr>
+                <th>Property</th>
+                <th>Default</th> 
+                <th>Type</th>
+                <th id="api-table-description">Description</th>
+            </tr>
+            <tr>
+                <td>id</th>
+                <td>stock.ticker + '-table'</th> 
+                <td>String</th>
+                <td>DOM element ID</th>
+            </tr>
+            <tr>
+                <td>colour</th>
+                <td>rgb(217,62,154)</th> 
+                <td>HTML colour</th>
+                <td>Table title colour</th>
+            </tr>
+            <tr>
+                <td>data</th>
+                <td>5 randomly assigned times/prices</th> 
+                <td>Dictionary</th>
+                <td>Dictionary of time-price pairs for a stock's daily data. Randomly generated if not provided</th>
+            </tr>
+        </table>
+    </div>
+
+    <br>
+    <h2 class="method-title">Stock.chart(id, colour, data)</h2>
+    <p>Displays a stock chart at HTML DOM id</p>
+    <br>
+    <div>
+        <table class="api-table">
+            <tr>
+                <th>Property</th>
+                <th>Default</th> 
+                <th>Type</th>
+                <th id="api-table-description">Description</th>
+            </tr>
+            <tr>
+                <td>id</th>
+                <td>stock.ticker + '-chart'</th> 
+                <td>String</th>
+                <td>DOM element ID</th>
+            </tr>
+            <tr>
+                <td>colour</th>
+                <td>rgb(217,62,154)</th> 
+                <td>HTML colour</th>
+                <td>Chart colour</th>
+            </tr>
+            <tr>
+                <td>data</th>
+                <td>5 randomly assigned times/prices</th> 
+                <td>Dictionary</th>
+                <td>Dictionary of time-price pairs for a stock's daily data. Randomly generated if not provided</th>
+            </tr>
+        </table>
+    </div>
+
+    <br>
+    <h2 class="method-title">Stock.addData(newTimes, newPrices)</h2>
+    <p>Add more data to an existing stock - length of newTimes and newPrices must match</p>
+    <br>
+    <div>
+        <table class="api-table">
+            <tr>
+                <th>Property</th>
+                <th>Default</th> 
+                <th>Type</th>
+                <th id="api-table-description">Description</th>
+            </tr>
+            <tr>
+                <td>newTimes</th>
+                <td>[]</th> 
+                <td>Array</th>
+                <td>New times to be added to stock.times</th>
+            </tr>
+            <tr>
+                <td>newPrices</th>
+                <td>[]]</th> 
+                <td>Array</th>
+                <td>New prices to be added to stock.prices</th>
+            </tr>
+        </table>
+    </div>
+
+	<br>
+	<script type="text/javascript" src="js/stocktopia.js"></script>
+ </body>
+</html>

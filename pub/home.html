@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+ 	<meta charset="utf-8">
+    <title>Stocktopia</title>
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="stylesheet" type="text/css" href="styles/stocktopia.css">
+<!DOCTYPE html>
+
+ <body>
+        <div id="site-header">
+
+            <div id="header-title">
+                <!-- <p><a class='link-text' href="home.html">Stocktopia.js</a></p> -->
+                <a href="home.html"><img class="site-logo" src="img/stocktopia.svg"></img></a>
+              </div>
+        
+            <div id="nav-menu">
+            <ul>
+                <li>
+                    <a href="">
+                        <img class="zoom" src="img/download.svg"></img>
+                    </a>
+                </li>
+                <li><a href="examples.html">Examples</a></li>
+                <li><a href="api.html">API</a></li>
+                <div id='current-page'>
+                    <li><a id="current-page" href="home.html">Home</a></li>
+                </div>
+            </ul>
+            </div>
+        
+        </div>
+    
+    <div class="center give-me-space">
+        <!-- <h1>Home</h1> -->
+        <h2>a small js library to display stock charts and data.</h2>
+        <img class="full-logo" src="img/logo-large.svg"></img>
+    </div>
+    <br><br>
+
+
+    <!-- Library insert -->
+	<div class="two-row">
+		<div class="two-column">
+			<div id="TSLA-table">
+			</div>
+		</div>
+
+		<div class="two-column lift-me-up">
+			<div id="TSLA-chart">
+			</div>
+		</div>
+	</div>
+    <br><br>
+
+    <div class="center">
+        <p>&nbsp</p>
+        <a class="seymour" href="examples.html">See more examples</a>
+        <p>&nbsp</p>
+		<p>secret hint: refresh the page for new randomized data!</p>
+        <p>&nbsp</p>
+	</div>
+	<script type="text/javascript" src="js/stocktopia.js"></script>
+    <script type="text/javascript" src="js/home.js"></script>
+ </body>
+</html>

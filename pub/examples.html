@@ -2,61 +2,130 @@
 <html lang="en">
  <head>
  	<meta charset="utf-8">
-    <title>Library Test Page</title>
+    <title>Stocktopia</title>
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
-    <link rel="stylesheet" type="text/css" href="styles/stocks-style.css">
+    <link rel="stylesheet" type="text/css" href="styles/stocktopia.css">
 <!DOCTYPE html>
-<html lang="en">
- <head>
-	<meta charset="utf-8">
-	<title>Library</title>
- </head>
+
  <body>
 	<div id="site-header">
 
 		<div id="header-title">
-		  <p>Stock Library Demo</p>
+		  <!-- <p><a class='link-text' href="home.html">Stocktopia.js</a></p> -->
+		  <a href="home.html"><img class="site-logo" src="img/stocktopia.svg"></img></a>
 		</div>
 	
 		<div id="nav-menu">
 		  <ul>
-			<li><a href="">Data</a></li>
-			<li><a href="">News</a></li>
-		    <div id='current-page'>
-                <li><a id="current-page" href="">Home</a></li>
-            </div>
+			<li class="zoom">
+				<a href="">
+					<img class="zoom" src="img/download.svg"></img>
+				</a>
+			</li>
+			<div id='current-page'>
+				<li><a id="current-page" href="examples.html">Examples</a></li>
+			</div>
+			<li><a href="api.html">API</a></li>
+			<li><a href="home.html">Home</a></li>
 		  </ul>
 		</div>
 	
 	  </div>
- 	<h1>Home</h1>
- 	<p>Let's see some trading data</p>
+	
+
+
+
+
+
+	<div class="center give-me-space">
+		<h1>create tables</h1>
+	</div>
 
     <!-- Library insert -->
-	<div class='three-row'>
-		<div class="three-column">
-			<div id="AAPL-chart">
-			</div>
-			<div id="AAPL-stats">
+	<div>
+		<div class="two-column">
+			<div id="AAPL-table">
 			</div>
 		</div>
 
-		<div class="three-column">
-			<div id="TSLA-chart">
-			</div>
-			<div id="TSLA-stats">
+		<div class="two-column">
+			<div id="my-table-id">
 			</div>
 		</div>
 
-		<div class="three-column">
-			<div id="GME-chart">
-			</div>
-			<div id="GME-stats">
-			</div>
+	</div>
+
+	<div class="left-marg">
+		<div class="">
+			<p>&nbsp</p>
+			<p>let x = ['10:00','11:00','12:00','13:00','14:00'];</p>
+			<p>let y = [339.54, 342.33, 356.93, 324.21,298.25];</p>
+			<p>	let data = [{ x: x[0], y: y[0]},{ x: x[1], y: y[1]},{ x: x[2], y: y[2]},{ x: x[3], y: y[3]},{ x: x[4], y: y[4]}]</p>
+			<p>&nbsp</p>
+			<p>aapl = new Stock('AAPL', "NASDAQ", data);</p>
+			<p>aapl.table();</p>
+			<p>tsla = new Stock('TSLA', "NASDAQ");</p>
+			<p>tsla.table("my-table-id", "green");</p>
 		</div>
 	</div>
 
-	<script type="text/javascript" src="js/stocks.js"></script>
+
+
+
+
+	<br>
+	<div class="center give-me-space">
+		<h1>create charts</h1>
+	</div>
+
+    <!-- Library insert -->
+	<div>
+		<div class="two-column">
+			<div id="AAPL-chart">
+			</div>
+		</div>
+
+		<div class="two-column">
+			<div id="TSLA-chart">
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Library insert -->
+	<div>
+		<div class="two-column">
+			<div id="AC-chart">
+			</div>
+		</div>
+
+		<div class="two-column">
+			<div id="MDA-chart">
+			</div>
+		</div>
+
+	</div>
+
+	<div class="left-marg">
+		<div class="">
+			<p>&nbsp</p>
+			<p>(continued from above)</p>
+			<p>&nbsp</p>
+			<p>aapl.chart();</p>
+			<p>tsla.chart(null, "blue");</p>
+			<p>ac = new Stock('AC', "TSX");</p>
+			<p>ac.chart(null, "yellow");</p>
+			<p>mda = new Stock('MDA', "TSX");</p>
+			<p>mda.chart();</p>
+		</div>
+	</div>
+
+	<br><br>
+	<div class="center">
+		<p>secret hint: refresh the page for new randomized data! (exception: AAPL)</p>
+	</div>
+	<br><br>
+	<script type="text/javascript" src="js/stocktopia.js"></script>
 	<script type="text/javascript" src="js/examples.js"></script>
  </body>
 </html>
