@@ -16,9 +16,9 @@ date: March - April 2021
 
 4. Connect pages to the library by adding the following lines in an HTML file:
 
-    <link rel="stylesheet" type="text/css" href="path/to/stocktopia.css">
+    `<link rel="stylesheet" type="text/css" href="path/to/stocktopia.css">`
 
-    <script type="text/javascript" src="path/to/stocktopia.js"></script>
+    `<script type="text/javascript" src="path/to/stocktopia.js"></script>`
     
 # API
 
