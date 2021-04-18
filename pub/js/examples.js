@@ -6,30 +6,39 @@ Created by: Callan Murphy
 Date: March - April 2021
 */
 
-// Data setup
-let x = ['10:00','11:00','12:00','13:00','14:00'];
-let y = [339.54, 342.33, 356.93, 324.21,298.25];
-let data = [
-    { x: x[0], y: y[0]},
-    { x: x[1], y: y[1]},
-    { x: x[2], y: y[2]},
-    { x: x[3], y: y[3]},
-    { x: x[4], y: y[4]}
-]
+// load library
+// "use strict"; 
 
-// example 1
-aapl = new Stock('AAPL', "NASDAQ", data);
-aapl.table();
+// const stocktopia = new Stocktopia()
 
-tsla = new Stock('TSLA', "NASDAQ");
-tsla.table("my-table-id", "green");
+function examples() {
+    // Data setup
+    let x = ['10:00','11:00','12:00','13:00','14:00'];
+    let y = [339.54, 342.33, 356.93, 324.21,298.25];
+    let data = [
+        { x: x[0], y: y[0]},
+        { x: x[1], y: y[1]},
+        { x: x[2], y: y[2]},
+        { x: x[3], y: y[3]},
+        { x: x[4], y: y[4]}
+    ]
 
-// example 2
-aapl.chart();
-tsla.chart(null, "blue");
+    // example 1
+    aapl = new Stock('AAPL', "NASDAQ", data);
+    aapl.table();
 
-ac = new Stock('AC', "TSX");
-ac.chart(null, "yellow");
+    tsla = new Stock('TSLA', "NASDAQ");
+    tsla.table("my-table-id", "green");
 
-mda = new Stock('MDA', "TSX");
-mda.chart();
+    // example 2
+    aapl.chart();
+    tsla.chart(null, "blue");
+
+    ac = new Stock('AC', "TSX");
+    ac.chart(null, "yellow");
+
+    mda = new Stock('MDA', "TSX");
+    mda.chart();
+}
+
+examples();
