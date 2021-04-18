@@ -3,7 +3,7 @@
 A small js library to display stock charts and data  
 https://stocktopia.herokuapp.com/   
 
-created by: Callan Murphy  
+by: Callan Murphy  
 date: March - April 2021
 
 # Getting Started
