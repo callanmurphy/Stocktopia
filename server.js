@@ -9,9 +9,24 @@ const path = require('path');
 
 app.use(express.static(path.join(__dirname, '/pub')))
 
-app.get('/', (req, res) => {
+app.use('/favicon.ico', express.static(path.join(__dirname, '/pub/img/favicon.ico')));
+
+app.get(['/', '/home'], (req, res) => {
+	res.sendFile(path.join(__dirname + '/pub/home.html'));
+})
+
+app.get('/examples', (req, res) => {
 	res.sendFile(path.join(__dirname + '/pub/examples.html'));
 })
+
+app.get('/api', (req, res) => {
+	res.sendFile(path.join(__dirname + '/pub/api.html'));
+})
+
+app.get('/download', function(req, res){
+	const file = path.join(__dirname + '/pub/Stocktopia.zip');
+	res.download(file);
+  });
 
 
 app.get('/problem', (req, res) => {

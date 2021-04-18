@@ -1,10 +1,11 @@
 # Stocktopia.js
 
 A small js library to display stock charts and data  
-https://stocktopia.herokuapp.com/   
+https://stocktopia.herokuapp.com/
 
-by: Callan Murphy  
-date: March - April 2021
+- CSC309 individual project
+- Created by: Callan Murphy (murph308, 1006027844)
+- Date: March - April 2021
 
 # Getting Started
 
