@@ -20,6 +20,6 @@ date: March - April 2021
 
     `<script type="text/javascript" src="path/to/stocktopia.js"></script>`
     
-# API
+# API / Docs
 
 https://stocktopia.herokuapp.com/api
