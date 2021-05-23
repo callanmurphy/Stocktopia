@@ -1,3 +1,6 @@
+
+![logo-large](https://user-images.githubusercontent.com/55993520/119248568-03cdb700-bb60-11eb-884f-6971006dfe35.png)
+
 # Stocktopia.js
 
 A small js library to display stock charts and data  
