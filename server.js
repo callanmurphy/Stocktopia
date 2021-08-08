@@ -19,8 +19,8 @@ app.get('/examples', (req, res) => {
 	res.sendFile(path.join(__dirname + '/pub/examples.html'));
 })
 
-app.get('/api', (req, res) => {
-	res.sendFile(path.join(__dirname + '/pub/api.html'));
+app.get('/docs', (req, res) => {
+	res.sendFile(path.join(__dirname + '/pub/docs.html'));
 })
 
 app.get('/download', function(req, res){
@@ -34,7 +34,7 @@ app.get('/problem', (req, res) => {
 })
 
 
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 4000
 app.listen(port, () => {
 	log(`Listening on port ${port}...`)
 })

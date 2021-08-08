@@ -6,6 +6,10 @@ body {
 	margin-right: 40px;
 }
 
+h1 {
+	margin-top: 50px;
+}
+
 img.site-logo {
 	width: 200px;
 	margin-top: -67px;
@@ -91,6 +95,10 @@ img.full-logo {
 	float: left;
 }
 
+.container {
+	width: 90%;
+}
+
 .three-column {
 	width: 33.3%;
 	float: left;
@@ -122,7 +130,7 @@ img.full-logo {
 .seymour {
 	padding-top: 20px;
 	padding-bottom: 20px;
-	color: white;
+	color: #000000;
 }
 
 h2 {

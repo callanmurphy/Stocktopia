@@ -33,4 +33,4 @@ https://stocktopia.herokuapp.com/
     
 ## API / Docs
 
-https://stocktopia.herokuapp.com/api
+https://stocktopia.herokuapp.com/docs
