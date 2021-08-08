@@ -221,6 +221,7 @@ Date: March - April 2021
         var container = document.getElementById(id);
         var title = document.createElement('h3');
         title.innerHTML = stock.ticker + " (" + stock.exchange + ")";
+        title.className = 'stocktopia-chart-title';
         var chart = document.createElement('canvas');
         chart.width = 450;
         chart.height = 200;
@@ -230,7 +231,7 @@ Date: March - April 2021
         ctx.translate(0, chart.height);
         ctx.scale(1, -1);
 
-        ctx.fillStyle = 'black';
+        ctx.fillStyle = '#fff';
         ctx.fillRect(0, 0, chart.width, chart.height);
 
         var high = parseFloat(stock.prices[0]);
@@ -256,8 +257,16 @@ Date: March - April 2021
             ctx.beginPath();
             ctx.moveTo(left, last);
             ctx.lineTo(left + move_by, price);
-            ctx.lineWidth = 5;
+            ctx.lineWidth = 3;
             ctx.lineCap = 'round';
+            ctx.scale(1, -1);
+            ctx.font = "12px Arial";
+            ctx.fillStyle = "black";
+            if (i == 0){
+                ctx.fillText(stock.prices[i], 20, -price);
+            }
+            ctx.fillText(stock.times[i], -(-left - move_by + 10), -20);
+            ctx.scale(1, -1);
         
             if (!colour) {
                 if (price < (stock.prices[i-1] - low + 50)) { ctx.strokeStyle = 'red'; } 
@@ -265,7 +274,9 @@ Date: March - April 2021
             } else {
                 ctx.strokeStyle = colour;
             }
-            ctx.stroke();
+            if (i > 0){
+                ctx.stroke();
+            }
             left += move_by;
             last = price;
 

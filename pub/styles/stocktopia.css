@@ -1,9 +1,15 @@
 table.stocktopia-table {
     background-color: white;
     border: 2px solid black;
+    border-radius: 15px;
     width: 80%;
+    padding: 5px 10px 10px 10px;
     margin-left: auto;
     margin-right: auto;
+    box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.1);
+    -o-box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.1);
 }
 
 td.stocktopia-table-header-td {
@@ -13,18 +19,40 @@ td.stocktopia-table-header-td {
     padding: 10px;
     /* width: 100%; */
     text-align: center;
+    border-radius: 15px;
     /* border: 5px solid black; */
 }
 
 td.stocktopia-table-td {
     /* border: 1px solid rgb(0, 204, 255); */
+    border-radius: 15px;
     background-color: white;
     padding: 10px;
+}
+
+td.stocktopia-table-td:nth-of-type(even) {
+    background-color: #f3f3f3;
 }
 
 .stocktopia-chart {
     margin-left: auto;
     margin-right: auto;
-    padding: 10px;
-    padding-left: 45px;
+    border-radius: 15px;
+    /* padding: 10px; */
+    box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.1);
+    -o-box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.1);
+}
+
+.stocktopia-chart-title {
+    /* margin-left: 120px; */
+    text-align: center;
+    background-color: #121212;
+    font-size: 16px;
+    color: #ffffff;
+    width: 230px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
 }
